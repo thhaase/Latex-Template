@@ -1,0 +1,74 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[hcentering,margin = 2cm,bottom = 3cm]{geometry}
+\usepackage{setspace}
+%\onehalfspacing
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black,citecolor=black]{hyperref}
+\usepackage{bookmark}
+\usepackage{comment} % makes life easier
+\usepackage{xcolor} % horizontal grey bars
+\usepackage{soul}
+
+\usepackage{pdfpages} % import PDF for Anhang
+\usepackage[xcolor,leftbars]{changebar} % blockquotes
+
+%\usepackage{harvard}
+\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\addbibresource{./Bibliothek.bib} % note the .bib is required
+
+% blockquotes
+\cbcolor{red}
+\newenvironment{answer}%
+{\begin{quote}%
+  \begin{changebar}\cbcolor{gray}\color{black}}%
+  {\end{changebar}%
+\end{quote}}
+
+
+\begin{document}
+
+
+\begin{center}
+    \Large{\textbf{Title\\ \textit{Subtitle}}}\\
+\vspace{0.4cm}
+\normalsize
+    \underline{\textbf{Thomas Haase}} \\
+\vspace{0.1cm}
+    \today\\
+\medskip
+\small{Info}\\
+\medskip\vspace{0,5cm}
+\small{Infoo} \hspace*{3cm} \small{Infooo}\\
+\medskip
+    \normalsize
+\end{center}
+\medskip
+
+{\color{gray}\hrule}
+
+ \tableofcontents
+
+\medskip
+
+{\color{gray}\hrule}
+\bigskip
+\thispagestyle{empty}
+
+\newpage
+\setcounter{page}{1}
+
+\section{Title}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet \parencite{adorno2003}.
+
+%\bibliographystyle{agsm}
+%\bibliography{./Bibliothek.bib}
+
+\printbibliography
+
+
+\end{document}
