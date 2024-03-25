@@ -2,7 +2,7 @@
 
  This is the Latex Template I write most of my Seminar Assignments with.
 
-
+<img src="sample_picture.png" alt="" width="70%">---
 
 ## make alias for copy_latex_templates.sh
 
