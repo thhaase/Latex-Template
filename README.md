@@ -2,7 +2,7 @@
 
  This is the Latex Template I write most of my Seminar Assignments with.
 
-
+---
 
 ## make alias for copy_latex_templates.sh
 
