@@ -7,20 +7,20 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath, amssymb, amsfonts}
 \usepackage{graphicx}
-\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black,citecolor=black]{hyperref}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black,citecolor=blue]{hyperref}
 \usepackage{bookmark}
 \usepackage{comment} % makes life easier
 \usepackage{xcolor} % horizontal grey bars
 \usepackage{soul}
-
+\usepackage{enumitem}
 \usepackage{pdfpages} % import PDF for Anhang
 \usepackage[xcolor,leftbars]{changebar} % blockquotes
 
 %\usepackage{harvard}
-\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\usepackage[style=authoryear-ibid,backend=biber, maxcitenames=1]{biblatex}
 \addbibresource{./Bibliothek.bib} % note the .bib is required
 
-% blockquotes
+%%% blockquotes
 \cbcolor{red}
 \newenvironment{answer}%
 {\begin{quote}%
@@ -28,21 +28,60 @@
   {\end{changebar}%
 \end{quote}}
 
+%%% cite u.a. --> et al.
+\DefineBibliographyStrings{german}{%
+  andothers = {et\addabbrvspace al\adddot}, % replace "u.a." with "et al."
+}
+
+\usepackage{listings}
+\usepackage{multicol}
+
+\definecolor{dkgreen}{rgb}{0.4,0.6,0.2}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.5,0,0.6}
+
+\lstset{frame=none,
+	language=R,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+    }
+
+%%% for colored table
+\usepackage{colortbl}
+\definecolor{LightBlue}{RGB}{173,216,230}
+\definecolor{LightGreen}{RGB}{144,238,144}
+\definecolor{LightPurple}{RGB}{231,154,255}
+\definecolor{LightOrange}{RGB}{255,200,150}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
 
 
 \begin{center}
-    \Large{\textbf{Title\\ \textit{Subtitle}}}\\
+    {{\Large \textbf{Title}}\\ \textit{Subtitle}}\\
 \vspace{0.4cm}
 \normalsize
-    \underline{\textbf{Thomas Haase}} \\
+    \underline{\textbf{author}} \\
 \vspace{0.1cm}
     \today\\
 \medskip
-\small{Info}\\
+\small{info}\\
 \medskip\vspace{0,5cm}
-\small{Infoo} \hspace*{3cm} \small{Infooo}\\
+\small{infoo} \hspace*{3cm} \small{infooo}\\
 \medskip
     \normalsize
 \end{center}
@@ -61,12 +100,10 @@
 \newpage
 \setcounter{page}{1}
 
-\section{Title}
+\section{Heading}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet \parencite{adorno2003}.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl ac aliquam tincidunt, mauris velit lacinia nunc, nec tincidunt nunc nunc id nunc. Sed euismod, nisl ac aliquam tincidunt, mauris velit lacinia nunc, nec tincidunt nunc nunc id nunc. Sed euismod, nisl ac aliquam tincidunt, mauris velit lacinia nunc, nec tincidunt nunc nunc id nunc \parencite{luhmann1984}.
 
-%\bibliographystyle{agsm}
-%\bibliography{./Bibliothek.bib}
 
 \printbibliography
 
