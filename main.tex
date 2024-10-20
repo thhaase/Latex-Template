@@ -16,12 +16,48 @@
 \usepackage{tcolorbox}
 \usepackage{caption}
 \usepackage{eurosym}
+\usepackage[autostyle=true,german=quotes]{csquotes}
 \usepackage{pdfpages} % import PDF for Anhang
 \usepackage[xcolor,leftbars]{changebar} % blockquotes
 
 %\usepackage{harvard}
-\usepackage[style=authoryear-ibid,backend=biber, maxcitenames=1]{biblatex}
-\addbibresource{./Bibliothek.bib} % note the .bib is required
+%\usepackage[style=authoryear-ibid,backend=biber, maxcitenames=1]{biblatex}
+%\addbibresource{./Bibliothek.bib} % note the .bib is required
+
+\usepackage[
+    backend=biber, 
+    style=apa, % Use APA style
+    citestyle=apa, % Use APA citestyle
+    date=year, % Display only the year
+    maxnames=2, % Display up to 2 author names before using et al.
+    minnames=1, % Use at least 1 name
+    maxbibnames=20, % Display up to 20 author names in the bibliography
+    uniquelist=false, % Disable uniquelist
+    isbn=false, % Do not display ISBN
+    doi=true, % Display DOI
+    eprint=false, % Do not display eprint
+    url=true, % Display URLs
+    pagetracker=true, % Enable page tracking
+    backref=true, % Display backreferences
+    backrefstyle=three+ % Combine backreferences
+]{biblatex}
+% Distance between bibliographical references
+\setlength{\bibitemsep}{.5em}
+% Indentation after the first line
+\setlength{\bibhang}{2em}
+% URL in the bibliography is in angle brackets
+\DeclareFieldFormat{url}{<\url{#1}>}
+% Break too long URLs
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+% Source of the bibliography file
+\addbibresource{Bibliothek.bib}
+% Replace "u.a." with "et al."
+\DefineBibliographyStrings{german}{%
+  andothers = {et\addabbrvspace al\adddot},
+}
+
+
 
 %%% blockquotes
 \cbcolor{red}
